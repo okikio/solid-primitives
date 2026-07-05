@@ -1,3 +1,9 @@
+/**
+ * Primitives for creating scheduled — throttled or debounced — callbacks.
+ *
+ * @module @solid-primitives/scheduled
+ */
+
 import { type Accessor, createSignal, getListener, getOwner, onCleanup } from "solid-js";
 import { isServer } from "solid-js/web";
 
