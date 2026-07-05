@@ -1,3 +1,9 @@
+/**
+ * A template primitive example.
+ *
+ * @module @solid-primitives/match
+ */
+
 import { type Accessor, type JSX, createMemo } from "solid-js";
 
 /**
