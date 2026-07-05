@@ -1,9 +1,15 @@
-export * from "./adapter-mocks.js";
-export * from "./adapter-node.js";
-export * from "./adapter-tauri.js";
-export * from "./adapter-web.js";
-export * from "./adapter-vfs.js";
-export * from "./reactive.js";
-export * from "./tools.js";
-export * from "./types.js";
-export * from "./watcher-chokidar.js";
+/**
+ * A primitive for convenient file system access.
+ *
+ * @module @solid-primitives/filesystem
+ */
+
+export * from "./adapter-mocks.ts";
+export * from "./adapter-node.ts";
+export * from "./adapter-tauri.ts";
+export * from "./adapter-web.ts";
+export * from "./adapter-vfs.ts";
+export * from "./reactive.ts";
+export * from "./tools.ts";
+export * from "./types.ts";
+export * from "./watcher-chokidar.ts";
