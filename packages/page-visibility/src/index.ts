@@ -1,3 +1,9 @@
+/**
+ * Primitive to track page visibility
+ *
+ * @module @solid-primitives/page-visibility
+ */
+
 import { type Accessor } from "solid-js";
 import { isServer } from "solid-js/web";
 import { createHydratableSingletonRoot } from "@solid-primitives/rootless";
