@@ -1,3 +1,9 @@
+/**
+ * Primitive that generates a client and reactive GraphQL queries
+ *
+ * @module @solid-primitives/graphql
+ */
+
 import {
   createResource,
   type InitializedResourceOptions,
@@ -225,7 +231,7 @@ export function makeMultipartBody(query: string, variables: object): FormData {
 /**
  * Creates a GraphQL query string.
  */
-export const gql = (query: TemplateStringsArray, ...expressions: any[]) =>
+export const gql = (query: TemplateStringsArray, ...expressions: any[]): string =>
   query
     .map((s, i) => `${s}${expressions[i] ?? ""}`)
     .join("")
