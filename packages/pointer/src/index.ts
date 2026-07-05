@@ -1,10 +1,16 @@
+/**
+ * A collection of primitives, giving you a nicer API to handle pointer events in a reactive context.
+ *
+ * @module @solid-primitives/pointer
+ */
+
 import { createEventListener } from "@solid-primitives/event-listener";
 import { remove, split } from "@solid-primitives/utils/immutable";
 import { createSubRoot } from "@solid-primitives/rootless";
 import { type Directive, entries, type Many, type MaybeAccessor } from "@solid-primitives/utils";
 import { type Accessor, createSignal, getOwner, DEV } from "solid-js";
 import { isServer } from "solid-js/web";
-import { DEFAULT_STATE, parseHandlersMap, toState, toStateActive } from "./helpers.js";
+import { DEFAULT_STATE, parseHandlersMap, toState, toStateActive } from "./helpers.ts";
 import type {
   Handler,
   OnEventRecord,
@@ -14,9 +20,9 @@ import type {
   PointerPositionDirectiveProps,
   PointerStateWithActive,
   PointerType,
-} from "./types.js";
+} from "./types.ts";
 
-export { getPositionToElement } from "./helpers.js";
+export { getPositionToElement } from "./helpers.ts";
 export type {
   PointerHoverDirectiveHandler,
   PointerHoverDirectiveProps,
@@ -26,7 +32,7 @@ export type {
   PointerState,
   PointerStateWithActive,
   PointerType,
-} from "./types.js";
+} from "./types.ts";
 
 /**
  * Setups event listeners for pointer events, that will get automatically removed on cleanup.
