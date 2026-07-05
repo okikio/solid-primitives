@@ -1,3 +1,9 @@
+/**
+ * Primitive for rectifying immutable values and dealing with immutability in Solid.
+ *
+ * @module @solid-primitives/immutable
+ */
+
 import {
   createRoot,
   createMemo,
