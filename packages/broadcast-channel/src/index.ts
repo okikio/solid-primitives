@@ -1,3 +1,10 @@
+/**
+ * Primitives to manage Broadcast Channel API
+ *
+ * @module @solid-primitives/broadcast-channel
+ */
+
+import type { Accessor } from "solid-js";
 import { createSignal, onCleanup } from "solid-js";
 import { isServer } from "solid-js/web";
 
@@ -33,7 +40,7 @@ const map: {
  * - `channelName` - the name of the channel
  * - `instance` - the underlying [BroadcastChannel](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API) instance
  */
-export function makeBroadcastChannel<T>(name: string) {
+export function makeBroadcastChannel<T>(name: string): TBroadcastChannelInstance['instance'] {
   if (isServer)
     return {
       onMessage: () => void 0,
@@ -143,7 +150,9 @@ export function makeBroadcastChannel<T>(name: string) {
  * - `channelName` - the name of the channel
  * - `instance` - the underlying [BroadcastChannel](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API) instance
  */
-export function createBroadcastChannel<T>(name: string) {
+export function createBroadcastChannel<T>(name: string): Omit<TBroadcastChannelInstance['instance'], "onMessage"> & {
+  message: Accessor<T | null>;
+} {
   const [message, setMessage] = createSignal<T | null>(null);
   const { channelName, close, instance, onMessage, postMessage } = makeBroadcastChannel<T>(name);
 
