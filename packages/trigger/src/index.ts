@@ -1,3 +1,9 @@
+/**
+ * A set of primitives based on Solid signals, used to trigger computations.
+ *
+ * @module @solid-primitives/trigger
+ */
+
 import { createSignal, getListener, onCleanup, type SignalOptions, DEV } from "solid-js";
 import { isServer } from "solid-js/web";
 import { noop } from "@solid-primitives/utils";
