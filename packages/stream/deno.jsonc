@@ -1,0 +1,24 @@
+{
+  "name": "@solid-primitives/stream",
+  "version": "0.7.3",
+  "description": "Primitive that gets a user media stream from microphone, camera or screen",
+  "license": "MIT",
+  "exports": "./src/index.ts",
+  "publish": {
+    "include": [
+      "README.md",
+      "LICENSE",
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "package.json"
+    ],
+    "exclude": [
+      "dist",
+      "dev",
+      "test",
+      "node_modules",
+      "vitest.config.ts",
+      "tsconfig.json"
+    ]
+  }
+}

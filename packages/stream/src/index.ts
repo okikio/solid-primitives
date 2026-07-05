@@ -1,3 +1,9 @@
+/**
+ * Primitive that gets a user media stream from microphone, camera or screen
+ *
+ * @module @solid-primitives/stream
+ */
+
 import {
   type Accessor,
   createEffect,
@@ -290,7 +296,7 @@ export const createScreen = (
  */
 export const createMediaPermissionRequest = (
   source?: MediaStreamConstraints | "audio" | "video",
-) => {
+): Promise<void> => {
   if (isServer) {
     return Promise.resolve();
   }
