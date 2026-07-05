@@ -1,3 +1,9 @@
+/**
+ * Primitives for creating a reactive masonry layout.
+ *
+ * @module @solid-primitives/masonry
+ */
+
 import { type Accessor, createMemo, createSignal, mapArray } from "solid-js";
 import { type MaybeAccessor, asAccessor } from "@solid-primitives/utils";
 
