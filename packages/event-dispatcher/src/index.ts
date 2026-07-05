@@ -1,3 +1,9 @@
+/**
+ * A primitive to dispatch component events.
+ *
+ * @module @solid-primitives/event-dispatcher
+ */
+
 import { isServer } from "solid-js/web";
 
 export type Handlers<T> = {
