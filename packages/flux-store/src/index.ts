@@ -1,3 +1,9 @@
+/**
+ * SolidJS Primitive to simplify the creation of global stores and the ability to access and mutate them.
+ *
+ * @module @solid-primitives/flux-store
+ */
+
 import { batch, untrack } from "solid-js";
 import type { SetStoreFunction } from "solid-js/store";
 import { createStore } from "solid-js/store";
