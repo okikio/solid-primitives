@@ -6,6 +6,8 @@
     "lib": ["DOM", "ESNext"],
     "moduleResolution": "NodeNext",
     "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
     "strict": true,
     "esModuleInterop": true,
     "isolatedModules": true,
