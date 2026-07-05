@@ -1,3 +1,9 @@
+/**
+ * Promised one-time watch for changes. Await a reactive condition.
+ *
+ * @module @solid-primitives/promise
+ */
+
 import {
   type Accessor,
   createComputed,
