@@ -1,3 +1,9 @@
+/**
+ * A navigator.onLine signal.
+ *
+ * @module @solid-primitives/connectivity
+ */
+
 import { makeEventListener } from "@solid-primitives/event-listener";
 import { createHydratableSingletonRoot } from "@solid-primitives/rootless";
 import { createHydratableSignal, trueFn, noop } from "@solid-primitives/utils";
