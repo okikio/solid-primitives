@@ -1,3 +1,9 @@
+/**
+ * Utility to animate the presence of an element based on the existence of data or lack thereof.
+ *
+ * @module @solid-primitives/presence
+ */
+
 /*
 
 MIT License (MIT)
