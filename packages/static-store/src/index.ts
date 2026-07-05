@@ -1,3 +1,9 @@
+/**
+ * Primitives for creating small reactive objects that doesn't change their shape over time - don't need a proxy wrapper.
+ *
+ * @module @solid-primitives/static-store
+ */
+
 import { accessWith, isObject, type SetterParam } from "@solid-primitives/utils";
 import {
   type Accessor,
