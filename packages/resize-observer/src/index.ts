@@ -1,3 +1,9 @@
+/**
+ * Reactive primitives for observing resizing of HTML elements.
+ *
+ * @module @solid-primitives/resize-observer
+ */
+
 import { makeEventListener } from "@solid-primitives/event-listener";
 import { createHydratableSingletonRoot } from "@solid-primitives/rootless";
 import { createHydratableStaticStore, createStaticStore } from "@solid-primitives/static-store";
