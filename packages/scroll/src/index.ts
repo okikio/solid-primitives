@@ -1,3 +1,9 @@
+/**
+ * Reactive primitives to react to element/window scrolling.
+ *
+ * @module @solid-primitives/scroll
+ */
+
 import { createEventListener } from "@solid-primitives/event-listener";
 import { createHydratableSingletonRoot } from "@solid-primitives/rootless";
 import { createDerivedStaticStore } from "@solid-primitives/static-store";
@@ -103,6 +109,6 @@ export function createScrollPosition(
  *   console.log(scroll.x, scroll.y)
  * })
  */
-export const useWindowScrollPosition = /*#__PURE__*/ createHydratableSingletonRoot(() =>
+export const useWindowScrollPosition: ReturnType<typeof createHydratableSingletonRoot> = /*#__PURE__*/ createHydratableSingletonRoot(() =>
   createScrollPosition(isServer ? () => undefined : window),
 );
