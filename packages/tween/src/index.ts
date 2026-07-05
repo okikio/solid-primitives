@@ -1,3 +1,9 @@
+/**
+ * Primitive that creates tween functions
+ *
+ * @module @solid-primitives/tween
+ */
+
 import { createSignal, createEffect, onCleanup, on } from "solid-js";
 import { isServer } from "solid-js/web";
 
