@@ -3,21 +3,21 @@ import { createWritableMemo } from "@solid-primitives/memo";
 import { createPolled, type TimeoutSource } from "@solid-primitives/timer";
 import { type Accessor, createComputed, createMemo, createSignal } from "solid-js";
 import { createStore, type Store } from "solid-js/store";
-import { DEFAULT_MESSAGES, HOUR, MINUTE } from "./variables.js";
+import { DEFAULT_MESSAGES, HOUR, MINUTE } from "./variables.ts";
 import {
   formatDate,
   formatDateRelative,
   getCountdown,
   getDate,
   getDateDifference,
-} from "./utils.js";
+} from "./utils.ts";
 import type {
   Countdown,
   DateInit,
   DateSetter,
   TimeAgoOptions,
   GetUpdateInterval,
-} from "./types.js";
+} from "./types.ts";
 
 /**
  * Creates a reactive `Date` signal.
