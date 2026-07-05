@@ -1,3 +1,9 @@
+/**
+ * Collection of custom memo primitives. They extend Solid's createMemo functionality while keeping the usage similar.
+ *
+ * @module @solid-primitives/memo
+ */
+
 import {
   type Accessor,
   createSignal,
