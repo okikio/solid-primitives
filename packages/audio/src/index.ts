@@ -1,3 +1,9 @@
+/**
+ * Primitives to manage audio and single sounds.
+ *
+ * @module @solid-primitives/audio
+ */
+
 import { type Accessor, onMount, onCleanup, createEffect } from "solid-js";
 import { isServer } from "solid-js/web";
 import { access, noop } from "@solid-primitives/utils";
