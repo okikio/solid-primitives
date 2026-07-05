@@ -38,8 +38,13 @@ jobs:
           fi
 
       - name: Publish dry run
-        run: deno task jsr:dry-run
+        run: |
+          deno task jsr:dry-run
+          deno bump-version --base=main --dry-run
+
 
       - name: Publish to JSR
         if: ${{ inputs.publish == 'true' }}
-        run: deno publish --check
+        run: |
+          deno bump-version --base=main
+          deno publish --check
