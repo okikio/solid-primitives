@@ -1,6 +1,12 @@
+/**
+ * Primitive to create a web socket connection
+ *
+ * @module @solid-primitives/websocket
+ */
+
 import { type Accessor, onCleanup, createSignal } from "solid-js";
 
-export type WSMessage = string | ArrayBufferLike | ArrayBufferView | Blob;
+export type WSMessage = Parameters<WebSocket["send"]>[0];
 
 /**
  * opens a web socket connection with a queued send
@@ -94,7 +100,7 @@ export const makeReconnectingWS = (
   url: string,
   protocols?: string | string[],
   options: WSReconnectOptions = {},
-) => {
+): ReconnectingWebSocket => {
   let retries = options.retries || Infinity;
   let ws: ReconnectingWebSocket;
   const queue: WSMessage[] = [];
