@@ -1,3 +1,9 @@
+/**
+ * A primitive to tokenize your solid-components to enable custom parsing.
+ *
+ * @module @solid-primitives/jsx-tokenizer
+ */
+
 import {
   type Accessor,
   type Component,
@@ -14,7 +20,7 @@ import { asArray } from "@solid-primitives/utils";
 /** @internal $TYPE is only used for type inference */
 declare const $TYPE: unique symbol;
 /** @internal */
-const $TOKENIZER = Symbol(!isServer && DEV ? "jsx-tokenizer" : "");
+const $TOKENIZER: unique symbol = Symbol(!isServer && DEV ? "jsx-tokenizer" : "");
 
 /**
  * Identifies a JSX Tokenizer. It is returned by {@link createTokenizer} (or {@link createToken}) and used by {@link createToken} and {@link resolveTokens}.
