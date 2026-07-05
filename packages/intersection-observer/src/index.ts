@@ -1,3 +1,9 @@
+/**
+ * Primitives to support using the intersection observer API.
+ *
+ * @module @solid-primitives/intersection-observer
+ */
+
 import {
   onMount,
   onCleanup,
