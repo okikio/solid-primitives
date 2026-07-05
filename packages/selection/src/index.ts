@@ -1,9 +1,15 @@
+/**
+ * selection primitive.
+ *
+ * @module @solid-primitives/selection
+ */
+
 import { type Accessor, createEffect, createSignal, onCleanup, type Setter } from "solid-js";
 import { isServer } from "solid-js/web";
 
 export type HTMLSelection = [node: HTMLElement | null, start: number, end: number];
 
-export const getTextNodes = (startNode: Node) => {
+export const getTextNodes = (startNode: Node): Node[] => {
   const textNodes: Node[] = [];
   const walkNodes = (node: Node) => {
     node instanceof Text && textNodes.push(node);
