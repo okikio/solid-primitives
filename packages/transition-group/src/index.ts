@@ -1,3 +1,9 @@
+/**
+ * Reactive primitives for implementing transition effects in SolidJS
+ *
+ * @module @solid-primitives/transition-group
+ */
+
 import {
   type Accessor,
   batch,
