@@ -1,3 +1,9 @@
+/**
+ * A primitive for creating a mutable store, an alternative to Solid's createStore.
+ *
+ * @module @solid-primitives/mutable
+ */
+
 /*
 
 Version 1.0 of the primitive is a direct copy from SolidJS version 1.7.12:
