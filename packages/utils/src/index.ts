@@ -1,3 +1,9 @@
+/**
+ * A bunch of reactive utility types and functions, for building primitives with Solid.js
+ *
+ * @module @solid-primitives/utils
+ */
+
 import {
   getOwner,
   onCleanup,
@@ -21,9 +27,9 @@ import type {
   Noop,
   AnyObject,
   AnyFunction,
-} from "./types.js";
+} from "./types.ts";
 
-export * from "./types.js";
+export * from "./types.ts";
 
 //
 // GENERAL HELPERS:
@@ -93,7 +99,7 @@ export function reverseChain<Args extends [] | any[]>(
   };
 }
 
-export const clamp = (n: number, min: number, max: number) => Math.min(Math.max(n, min), max);
+export const clamp = (n: number, min: number, max: number): number => Math.min(Math.max(n, min), max);
 
 /**
  * Accesses the value of a MaybeAccessor
@@ -127,7 +133,7 @@ export const accessArray = <A extends MaybeAccessor<any>>(
 export const withAccess = <T, A extends MaybeAccessor<T>, V = MaybeAccessorValue<A>>(
   value: A,
   fn: (value: NonNullable<V>) => void,
-) => {
+): void => {
   const _value = access(value);
   // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   typeof _value != null && fn(_value as NonNullable<V>);

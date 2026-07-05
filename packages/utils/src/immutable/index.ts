@@ -1,6 +1,12 @@
-export * from "./copy.js";
-export * from "./number.js";
-export * from "./update.js";
-export * from "./object.js";
-export * from "./array.js";
-export * from "./types.js";
+/**
+ * A bunch of reactive utility types and functions, for building primitives with Solid.js
+ *
+ * @module @solid-primitives/utils/immutable
+ */
+
+export * from "./copy.ts";
+export * from "./number.ts";
+export * from "./update.ts";
+export * from "./object.ts";
+export * from "./array.ts";
+export * from "./types.ts";
