@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { TrackHandler, EventType } from "./index.js";
+import { TrackHandler, EventType } from "./index.ts";
 
 type GoogleAnalyticsOptions = {
   trackingId: string;
@@ -8,7 +8,7 @@ type GoogleAnalyticsOptions = {
   userId: string;
 };
 
-export const loadGoogleAnalytics = (options: GoogleAnalyticsOptions) => {
+export const loadGoogleAnalytics = (options: GoogleAnalyticsOptions): void => {
   window.ga =
     window.ga ||
     function () {

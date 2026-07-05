@@ -1,3 +1,9 @@
+/**
+ * Primitive that makes managing analytics a lot easier.
+ *
+ * @module @solid-primitives/analytics
+ */
+
 export enum EventType {
   Pageview = "page",
   Event = "event",
