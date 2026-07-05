@@ -1,3 +1,9 @@
+/**
+ * A set of const boolean variables identifying device and browser type.
+ *
+ * @module @solid-primitives/platform
+ */
+
 import { isServer } from "solid-js/web";
 
 const w = isServer ? { document: {}, navigator: { userAgent: "" } } : (window as any);

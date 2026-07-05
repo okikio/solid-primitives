@@ -1,0 +1,24 @@
+{
+  "name": "@solid-primitives/platform",
+  "version": "0.2.1",
+  "description": "A set of const boolean variables identifying device and browser type.",
+  "license": "MIT",
+  "exports": "./src/index.ts",
+  "publish": {
+    "include": [
+      "README.md",
+      "LICENSE",
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "package.json"
+    ],
+    "exclude": [
+      "dist",
+      "dev",
+      "test",
+      "node_modules",
+      "vitest.config.ts",
+      "tsconfig.json"
+    ]
+  }
+}
