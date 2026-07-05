@@ -1,3 +1,9 @@
+/**
+ * Primitives simplifying or extending the SolidJS Context API
+ *
+ * @module @solid-primitives/context
+ */
+
 import {
   createContext,
   createComponent,
@@ -6,7 +12,7 @@ import {
   type Context,
   type FlowComponent,
 } from "solid-js";
-import type { ContextProviderComponent } from "../node_modules/solid-js/types/reactive/signal.js";
+import type { ContextProviderComponent } from "solid-js/types/reactive/signal.d.ts";
 
 export type ContextProviderProps = {
   children?: JSX.Element;
