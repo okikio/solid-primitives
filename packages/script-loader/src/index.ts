@@ -1,3 +1,9 @@
+/**
+ * Primitive to load scripts dynamically
+ *
+ * @module @solid-primitives/script-loader
+ */
+
 import {
   type Accessor,
   createRenderEffect,
