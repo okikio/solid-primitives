@@ -1,3 +1,9 @@
+/**
+ * A virtualized list component for performantly rendering lists with many elements
+ *
+ * @module @solid-primitives/virtual
+ */
+
 import { For, createSignal } from "solid-js";
 import type { Accessor, JSX } from "solid-js";
 import { access } from "@solid-primitives/utils";
