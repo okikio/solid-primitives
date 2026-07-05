@@ -1,3 +1,9 @@
+/**
+ * Primitives to manage timeout and interval
+ *
+ * @module @solid-primitives/timer
+ */
+
 import {
   createSignal,
   onCleanup,
