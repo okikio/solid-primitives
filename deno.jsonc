@@ -1,6 +1,7 @@
 {
   "workspace": [
-    "packages/*"
+    "packages/*",
+    "site"
   ],
   "nodeModulesDir": "auto",
   "preferPackageJson": true,
@@ -14,6 +15,7 @@
       "packages/*/dist",
       "packages/*/dev",
       "packages/*/test",
+      "packages/*/tauri_storage",
       "site",
       "node_modules"
     ],
@@ -64,7 +66,7 @@
     "jsr:list": "deno list -r"
   },
   "allowScripts": {
-    "allow": ["npm:@parcel/watcher@2.5.6", "npm:esbuild@0.28.1"],
-    "deny": ["npm:esbuild@0.21.5", "npm:esbuild@0.25.12", "npm:fsevents@2.3.3"]
+    "allow": [],
+    "deny": ["npm:@parcel/watcher@2.5.6", "npm:esbuild@0.21.5", "npm:esbuild@0.25.12", "npm:esbuild@0.28.1", "npm:fsevents@2.3.3"]
   }
 }
