@@ -1,3 +1,9 @@
+/**
+ * Package providing extra layer of lifecycle primitives for Solid.
+ *
+ * @module @solid-primitives/lifecycle
+ */
+
 import {
   type Accessor,
   createSignal,
