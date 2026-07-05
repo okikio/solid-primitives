@@ -1,3 +1,9 @@
+/**
+ * Collection of reactive primitives focused on styles.
+ *
+ * @module @solid-primitives/styles
+ */
+
 import { type Accessor, onCleanup } from "solid-js";
 import { isServer } from "solid-js/web";
 import { createHydratableSingletonRoot } from "@solid-primitives/rootless";
