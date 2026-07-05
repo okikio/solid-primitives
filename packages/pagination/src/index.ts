@@ -1,3 +1,9 @@
+/**
+ * A primitive that creates all the reactive data to manage your pagination.
+ *
+ * @module @solid-primitives/pagination
+ */
+
 import { access, tryOnCleanup, noop, type MaybeAccessor } from "@solid-primitives/utils";
 import {
   type Accessor,
