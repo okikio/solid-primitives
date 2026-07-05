@@ -4,15 +4,15 @@ import { type Accessor, createMemo, on } from "solid-js";
 /**
  * Signal builder: `String.prototype.toLowerCase()`
  */
-export const lowercase = (string: Accessor<string>) => createMemo(() => string().toLowerCase());
+export const lowercase = (string: Accessor<string>): Accessor<string> => createMemo(() => string().toLowerCase());
 /**
  * Signal builder: `String.prototype.toUpperCase()`
  */
-export const uppercase = (string: Accessor<string>) => createMemo(() => string().toUpperCase());
+export const uppercase = (string: Accessor<string>): Accessor<string> => createMemo(() => string().toUpperCase());
 /**
  * Signal builder: capitalize a string input
  */
-export const capitalize = (string: Accessor<string>) =>
+export const capitalize = (string: Accessor<string>): Accessor<string> =>
   createMemo(on(string, s => s[0]!.toUpperCase() + s.substring(1).toLowerCase()));
 /**
  * Signal builder: `String.prototype.substring()`
@@ -23,7 +23,7 @@ export const substring = (
   string: MaybeAccessor<string>,
   start: MaybeAccessor<number>,
   end?: MaybeAccessor<number>,
-) => createMemo(() => access(string).substring(access(start), access(end)));
+): Accessor<string> => createMemo(() => access(string).substring(access(start), access(end)));
 
 // a string primitive harvested from @lxsmnsyc's solid-use:
 /**
