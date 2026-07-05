@@ -1,8 +1,8 @@
 import { createSignal, type JSX, onCleanup, onMount } from "solid-js";
 import { isServer } from "solid-js/web";
 import { noop } from "@solid-primitives/utils";
-import { transformFiles } from "./helpers.js";
-import type { UploadFile, Dropzone, DropzoneOptions } from "./types.js";
+import { transformFiles } from "./helpers.ts";
+import type { UploadFile, Dropzone, DropzoneOptions } from "./types.ts";
 
 /**
  * Primitive to make working with dropzones easier.

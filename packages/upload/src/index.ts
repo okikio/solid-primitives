@@ -1,7 +1,13 @@
+/**
+ * Primitives for uploading files.
+ *
+ * @module @solid-primitives/upload
+ */
+
 import { type JSX, onCleanup, onMount } from "solid-js";
 import { isServer } from "solid-js/web";
-import { transformFiles } from "./helpers.js";
-import { type FileUploaderDirective } from "./types.js";
+import { transformFiles } from "./helpers.ts";
+import { type FileUploaderDirective } from "./types.ts";
 
 declare module "solid-js" {
   namespace JSX {
@@ -11,7 +17,7 @@ declare module "solid-js" {
   }
 }
 
-export const fileUploader = (element: HTMLInputElement, options: () => FileUploaderDirective) => {
+export const fileUploader = (element: HTMLInputElement, options: () => FileUploaderDirective): void => {
   if (isServer) {
     return;
   }
@@ -38,6 +44,6 @@ export const fileUploader = (element: HTMLInputElement, options: () => FileUploa
   });
 };
 
-export { createFileUploader } from "./createFileUploader.js";
-export { createDropzone } from "./createDropzone.js";
-export * from "./types.js";
+export { createFileUploader } from "./createFileUploader.ts";
+export { createDropzone } from "./createDropzone.ts";
+export * from "./types.ts";
