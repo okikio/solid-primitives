@@ -1,3 +1,9 @@
+/**
+ * The Map & WeakMap data structures as a reactive signals.
+ *
+ * @module @solid-primitives/map
+ */
+
 import { type Accessor, batch } from "solid-js";
 import { TriggerCache } from "@solid-primitives/trigger";
 
@@ -24,7 +30,7 @@ export class ReactiveMap<K, V> extends Map<K, V> {
   #keyTriggers = new TriggerCache<K | typeof $OBJECT>();
   #valueTriggers = new TriggerCache<K | typeof $OBJECT>();
 
-  [Symbol.iterator](): MapIterator<[K, V]> {
+  override [Symbol.iterator](): MapIterator<[K, V]> {
     return this.entries();
   }
 
@@ -33,12 +39,12 @@ export class ReactiveMap<K, V> extends Map<K, V> {
     if (entries) for (const entry of entries) super.set(...entry);
   }
 
-  get size(): number {
+  override get size(): number {
     this.#keyTriggers.track($OBJECT);
     return super.size;
   }
 
-  *keys(): MapIterator<K> {
+  override *keys(): MapIterator<K> {
     this.#keyTriggers.track($OBJECT);
 
     for (const key of super.keys()) {
@@ -46,7 +52,7 @@ export class ReactiveMap<K, V> extends Map<K, V> {
     }
   }
 
-  *values(): MapIterator<V> {
+  override *values(): MapIterator<V> {
     this.#valueTriggers.track($OBJECT);
 
     for (const value of super.values()) {
@@ -54,7 +60,7 @@ export class ReactiveMap<K, V> extends Map<K, V> {
     }
   }
 
-  *entries(): MapIterator<[K, V]> {
+  override *entries(): MapIterator<[K, V]> {
     this.#keyTriggers.track($OBJECT);
     this.#valueTriggers.track($OBJECT);
 
@@ -63,23 +69,23 @@ export class ReactiveMap<K, V> extends Map<K, V> {
     }
   }
 
-  forEach(callbackfn: (value: V, key: K, map: Map<K, V>) => void, thisArg?: any): void {
+  override forEach(callbackfn: (value: V, key: K, map: Map<K, V>) => void, thisArg?: any): void {
     this.#keyTriggers.track($OBJECT);
     this.#valueTriggers.track($OBJECT);
     super.forEach(callbackfn, thisArg);
   }
 
-  has(key: K): boolean {
+  override has(key: K): boolean {
     this.#keyTriggers.track(key);
     return super.has(key);
   }
 
-  get(key: K): V | undefined {
+  override get(key: K): V | undefined {
     this.#valueTriggers.track(key);
     return super.get(key);
   }
 
-  set(key: K, value: V): this {
+  override set(key: K, value: V): this {
     const hadNoKey = !super.has(key);
     const hasChanged = super.get(key) !== value;
     const result = super.set(key, value);
@@ -100,7 +106,7 @@ export class ReactiveMap<K, V> extends Map<K, V> {
     return result;
   }
 
-  delete(key: K): boolean {
+  override delete(key: K): boolean {
     const isDefined = super.get(key) !== undefined;
     const result = super.delete(key);
 
@@ -119,7 +125,7 @@ export class ReactiveMap<K, V> extends Map<K, V> {
     return result;
   }
 
-  clear(): void {
+  override clear(): void {
     if (super.size === 0) return;
     batch(() => {
       this.#keyTriggers.dirty($OBJECT);
@@ -159,15 +165,15 @@ export class ReactiveWeakMap<K extends object, V> extends WeakMap<K, V> {
     if (entries) for (const entry of entries) super.set(...entry);
   }
 
-  has(key: K): boolean {
+  override has(key: K): boolean {
     this.#keyTriggers.track(key);
     return super.has(key);
   }
-  get(key: K): V | undefined {
+  override get(key: K): V | undefined {
     this.#valueTriggers.track(key);
     return super.get(key);
   }
-  set(key: K, value: V): this {
+  override set(key: K, value: V): this {
     const hadNoKey = !super.has(key);
     const hasChanged = super.get(key) !== value;
     const result = super.set(key, value);
@@ -181,7 +187,7 @@ export class ReactiveWeakMap<K extends object, V> extends WeakMap<K, V> {
 
     return result;
   }
-  delete(key: K): boolean {
+  override delete(key: K): boolean {
     const isDefined = super.get(key) !== undefined;
     const result = super.delete(key);
 
