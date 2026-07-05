@@ -1,3 +1,9 @@
+/**
+ * Library of primitives, components and directives for SolidJS that help managing references to JSX elements.
+ *
+ * @module @solid-primitives/refs
+ */
+
 import { chain, arrayEquals } from "@solid-primitives/utils";
 import {
   type Accessor,
@@ -11,7 +17,7 @@ import {
 import { isServer } from "solid-js/web";
 
 // TODO delete in next major version
-export type { ResolvedChildren, ResolvedJSXElement } from "solid-js/types/reactive/signal.js";
+export type { ResolvedChildren, ResolvedJSXElement } from "solid-js/types/reactive/signal.d.ts";
 
 /**
  * Type for the `ref` prop
