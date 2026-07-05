@@ -1,3 +1,9 @@
+/**
+ * A library of reactive promitives helping handling user's keyboard input.
+ *
+ * @module @solid-primitives/keyboard
+ */
+
 import { makeEventListener } from "@solid-primitives/event-listener";
 import { createSingletonRoot } from "@solid-primitives/rootless";
 import { arrayEquals } from "@solid-primitives/utils";
@@ -43,7 +49,7 @@ function equalsKeyHoldSequence(sequence: string[][], model: string[]): boolean {
  * })
  * ```
  */
-export const useKeyDownEvent = /*#__PURE__*/ createSingletonRoot<Accessor<KeyboardEvent | null>>(
+export const useKeyDownEvent: ReturnType<typeof createSingletonRoot<Accessor<KeyboardEvent | null>>> = /*#__PURE__*/ createSingletonRoot<Accessor<KeyboardEvent | null>>(
   () => {
     if (isServer) {
       return () => null;
@@ -83,7 +89,7 @@ type OldPressedKeys = [Accessor<string[]>, { event: Accessor<KeyboardEvent | nul
  * })
  * ```
  */
-export const useKeyDownList = /*#__PURE__*/ createSingletonRoot<Accessor<string[]>>(() => {
+export const useKeyDownList: ReturnType<typeof createSingletonRoot<Accessor<string[]>>> = /*#__PURE__*/ createSingletonRoot<Accessor<string[]>>(() => {
   if (isServer) {
     const keys = () => [];
     // this is for backwards compatibility
@@ -183,7 +189,7 @@ export const useKeyDownList = /*#__PURE__*/ createSingletonRoot<Accessor<string[
  * })
  * ```
  */
-export const useCurrentlyHeldKey = /*#__PURE__*/ createSingletonRoot<Accessor<string | null>>(
+export const useCurrentlyHeldKey: ReturnType<typeof createSingletonRoot<Accessor<string | null>>> = /*#__PURE__*/ createSingletonRoot<Accessor<string | null>>(
   () => {
     if (isServer) {
       return () => null;
@@ -223,7 +229,7 @@ export const useCurrentlyHeldKey = /*#__PURE__*/ createSingletonRoot<Accessor<st
  * })
  * ```
  */
-export const useKeyDownSequence = /*#__PURE__*/ createSingletonRoot<Accessor<string[][]>>(() => {
+export const useKeyDownSequence: ReturnType<typeof createSingletonRoot<Accessor<string[][]>>> = /*#__PURE__*/ createSingletonRoot<Accessor<string[][]>>(() => {
   if (isServer) {
     return () => [];
   }
