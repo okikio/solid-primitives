@@ -1,3 +1,9 @@
+/**
+ * Primitive to manage events in a reactive way.
+ *
+ * @module @solid-primitives/event-props
+ */
+
 import { createSignal } from "solid-js";
 
 export type HTMLEventName = keyof HTMLElementEventMap;
