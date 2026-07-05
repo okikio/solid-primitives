@@ -1,3 +1,9 @@
+/**
+ * Primitives for tracking HTML element size and position on screen as it changes.
+ *
+ * @module @solid-primitives/bounds
+ */
+
 import { makeEventListener } from "@solid-primitives/event-listener";
 import { createResizeObserver } from "@solid-primitives/resize-observer";
 import { createDerivedStaticStore } from "@solid-primitives/static-store";
