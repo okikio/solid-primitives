@@ -1,3 +1,9 @@
+/**
+ * Primitives for autofocusing HTML elements
+ *
+ * @module @solid-primitives/autofocus
+ */
+
 import { createEffect, onMount, type JSX, type Accessor } from "solid-js";
 import { type FalsyValue } from "@solid-primitives/utils";
 
@@ -23,7 +29,7 @@ declare module "solid-js" {
  * <button autofocus ref={autofocus}>Autofocused</button>;
  * ```
  */
-export const autofocus = (element: HTMLElement, autofocus?: Accessor<boolean>) => {
+export const autofocus = (element: HTMLElement, autofocus?: Accessor<boolean>): void => {
   if (autofocus?.() === false) {
     return;
   }
@@ -49,7 +55,7 @@ export const autofocus = (element: HTMLElement, autofocus?: Accessor<boolean>) =
  * <button ref={ref}>Autofocused</button>;
  * ```
  */
-export const createAutofocus = (ref: Accessor<HTMLElement | FalsyValue>) => {
+export const createAutofocus = (ref: Accessor<HTMLElement | FalsyValue>): void => {
   createEffect(() => {
     const el = ref();
     el && setTimeout(() => el.focus());
