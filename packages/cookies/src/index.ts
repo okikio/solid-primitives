@@ -1,3 +1,9 @@
+/**
+ * A set of primitives for handling cookies in solid
+ *
+ * @module @solid-primitives/cookies
+ */
+
 import { createSignal, createEffect, type Signal } from "solid-js";
 import { getRequestEvent, isServer } from "solid-js/web";
 
