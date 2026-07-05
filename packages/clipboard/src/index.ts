@@ -1,3 +1,9 @@
+/**
+ * Primitives for reading and writing to clipboard.
+ *
+ * @module @solid-primitives/clipboard
+ */
+
 import { access, type MaybeAccessor } from "@solid-primitives/utils";
 import {
   type Accessor,
@@ -154,7 +160,7 @@ export const createClipboard = (
 export const copyToClipboard = (
   el: HTMLElement,
   options: MaybeAccessor<CopyToClipboardOptions>,
-) => {
+): undefined => {
   if (isServer) {
     return undefined;
   }
