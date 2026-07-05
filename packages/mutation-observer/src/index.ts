@@ -1,3 +1,9 @@
+/**
+ * Primitive providing the ability to watch for changes made to the DOM tree.
+ *
+ * @module @solid-primitives/mutation-observer
+ */
+
 import { onCleanup, onMount } from "solid-js";
 import type { JSX } from "solid-js";
 import { access, asArray, type MaybeAccessor } from "@solid-primitives/utils";
