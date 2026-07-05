@@ -1,3 +1,9 @@
+/**
+ * Control Flow primitives and components that require specifying explicit keys to identify or rerender elements.
+ *
+ * @module @solid-primitives/keyed
+ */
+
 import {
   type Accessor,
   createMemo,
