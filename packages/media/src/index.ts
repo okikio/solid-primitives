@@ -1,3 +1,9 @@
+/**
+ * Primitives for media query and device features
+ *
+ * @module @solid-primitives/media
+ */
+
 import { type Accessor } from "solid-js";
 import { isServer } from "solid-js/web";
 import { makeEventListener } from "@solid-primitives/event-listener";
@@ -41,7 +47,7 @@ export function makeMediaQueryListener(
  * console.log(isSmall());
  * ```
  */
-export function createMediaQuery(query: string, serverFallback = false) {
+export function createMediaQuery(query: string, serverFallback = false): Accessor<boolean> {
   if (isServer) {
     return () => serverFallback;
   }
@@ -64,7 +70,7 @@ export function createMediaQuery(query: string, serverFallback = false) {
  *    prefersDark() // => boolean
  * });
  */
-export function createPrefersDark(serverFallback?: boolean) {
+export function createPrefersDark(serverFallback?: boolean): Accessor<boolean> {
   return createMediaQuery("(prefers-color-scheme: dark)", serverFallback);
 }
 
