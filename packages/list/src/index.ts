@@ -1,3 +1,9 @@
+/**
+ * A List component, an alternative to For and Index.
+ *
+ * @module @solid-primitives/list
+ */
+
 import {
   createSignal,
   type Accessor,
@@ -210,7 +216,7 @@ export function List<T extends readonly any[], U extends JSX.Element>(props: {
   each: T | undefined | null | false;
   fallback?: JSX.Element;
   children: (item: Accessor<T[number]>, index: Accessor<number>) => U;
-}) {
+}): JSX.Element {
   const fallback = "fallback" in props && { fallback: () => props.fallback };
   return (isDev
     ? createMemo(
