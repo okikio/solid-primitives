@@ -1,4 +1,10 @@
-import { type AsyncStorage } from "./persisted.js";
+/**
+ * Primitive that provides reactive wrappers for storage access
+ *
+ * @module @solid-primitives/storage/tauri
+ */
+
+import { type AsyncStorage } from "./persisted.ts";
 
 /**
  * tauriStorage: an asynchronous Storage API based on tauri-plugin-store
@@ -11,7 +17,7 @@ import { type AsyncStorage } from "./persisted.js";
  * const storage = isFallback ? localStorage : tauriStorage();
  * ````
  */
-export function tauriStorage(name = "solid-storage.dat") {
+export function tauriStorage(name = "solid-storage.dat"): AsyncStorage {
   const api: AsyncStorage = {
     _store: null,
     _getStore: async () =>
