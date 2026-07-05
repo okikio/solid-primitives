@@ -1,3 +1,9 @@
+/**
+ * Primitive that wraps permission queries
+ *
+ * @module @solid-primitives/permission
+ */
+
 import { type Accessor, createEffect, createSignal, on, onCleanup } from "solid-js";
 import { isServer } from "solid-js/web";
 
