@@ -1,3 +1,9 @@
+/**
+ * A primitive for creating reactive state machines.
+ *
+ * @module @solid-primitives/state-machine
+ */
+
 import { createMemo, createSignal, type Accessor, untrack } from "solid-js";
 
 /**
