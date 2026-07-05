@@ -1,3 +1,9 @@
+/**
+ * The Set & WeakSet data structures as a reactive signals.
+ *
+ * @module @solid-primitives/set
+ */
+
 import { type Accessor, batch } from "solid-js";
 import { TriggerCache } from "@solid-primitives/trigger";
 
@@ -23,25 +29,25 @@ export class ReactiveSet<T> extends Set<T> {
     if (values) for (const value of values) super.add(value);
   }
 
-  [Symbol.iterator](): SetIterator<T> {
+  override [Symbol.iterator](): SetIterator<T> {
     return this.values();
   }
 
-  get size(): number {
+  override get size(): number {
     this.#triggers.track($KEYS);
     return super.size;
   }
 
-  has(value: T): boolean {
+  override has(value: T): boolean {
     this.#triggers.track(value);
     return super.has(value);
   }
 
-  keys(): SetIterator<T> {
+  override keys(): SetIterator<T> {
     return this.values();
   }
 
-  *values(): SetIterator<T> {
+  override *values(): SetIterator<T> {
     this.#triggers.track($KEYS);
 
     for (const value of super.values()) {
@@ -49,7 +55,7 @@ export class ReactiveSet<T> extends Set<T> {
     }
   }
 
-  *entries(): SetIterator<[T, T]> {
+  override *entries(): SetIterator<[T, T]> {
     this.#triggers.track($KEYS);
 
     for (const entry of super.entries()) {
@@ -57,12 +63,12 @@ export class ReactiveSet<T> extends Set<T> {
     }
   }
 
-  forEach(callbackfn: (value1: T, value2: T, set: Set<T>) => void, thisArg?: any): void {
+  override forEach(callbackfn: (value1: T, value2: T, set: Set<T>) => void, thisArg?: any): void {
     this.#triggers.track($KEYS);
     super.forEach(callbackfn, thisArg);
   }
 
-  add(value: T): this {
+  override add(value: T): this {
     if (!super.has(value)) {
       super.add(value);
       batch(() => {
@@ -74,7 +80,7 @@ export class ReactiveSet<T> extends Set<T> {
     return this;
   }
 
-  delete(value: T): boolean {
+  override delete(value: T): boolean {
     const result = super.delete(value);
 
     if (result) {
@@ -87,7 +93,7 @@ export class ReactiveSet<T> extends Set<T> {
     return result;
   }
 
-  clear(): void {
+  override clear(): void {
     if (!super.size) return;
     batch(() => {
       this.#triggers.dirty($KEYS);
@@ -117,12 +123,12 @@ export class ReactiveWeakSet<T extends object> extends WeakSet<T> {
     if (values) for (const value of values) super.add(value);
   }
 
-  has(value: T): boolean {
+  override has(value: T): boolean {
     this.#triggers.track(value);
     return super.has(value);
   }
 
-  add(value: T): this {
+  override add(value: T): this {
     if (!super.has(value)) {
       super.add(value);
       this.#triggers.dirty(value);
@@ -130,7 +136,7 @@ export class ReactiveWeakSet<T extends object> extends WeakSet<T> {
     return this;
   }
 
-  delete(value: T): boolean {
+  override delete(value: T): boolean {
     const result = super.delete(value);
 
     result && this.#triggers.dirty(value);
