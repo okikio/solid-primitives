@@ -1,3 +1,9 @@
+/**
+ * Library of primitives for providing internationalization support.
+ *
+ * @module @solid-primitives/i18n
+ */
+
 export type BaseRecordDict = { readonly [K: string | number]: unknown };
 export type BaseArrayDict = readonly unknown[];
 export type BaseDict = BaseRecordDict | BaseArrayDict;
