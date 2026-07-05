@@ -1,9 +1,15 @@
+/**
+ * Primitives that support creating Web Workers.
+ *
+ * @module @solid-primitives/workers
+ */
+
 import { type Accessor, type Setter, createEffect, on, onCleanup } from "solid-js";
 import { isServer } from "solid-js/web";
-import type { PostMessageOptions, WorkerCallbacks, WorkerExports, WorkerMessage } from "./types.js";
-import { KILL, RPC, cjs, setup } from "./utils.js";
+import type { PostMessageOptions, WorkerCallbacks, WorkerExports, WorkerMessage } from "./types.d.ts";
+import { KILL, RPC, cjs, setup } from "./utils.ts";
 
-export type * from "./types.js";
+export type * from "./types.d.ts";
 
 /**
  * Creates a very basic WebWorker based on provided code.
