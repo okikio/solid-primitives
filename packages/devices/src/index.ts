@@ -1,3 +1,10 @@
+/**
+ * Primitive that enumerates media devices
+ *
+ * @module @solid-primitives/devices
+ */
+
+import type { Accessor } from "solid-js";
 import { createMemo, createSignal, getOwner, onCleanup } from "solid-js";
 import { isServer } from "solid-js/web";
 import { createStore } from "solid-js/store";
@@ -11,7 +18,7 @@ import { createStore } from "solid-js/store";
  *
  * If the array does not contain a device of a certain kind, you cannot get permissions, as requesting permissions requires requesting a stream on any device of the kind.
  */
-export const createDevices = () => {
+export const createDevices = (): Accessor<MediaDeviceInfo[]> => {
   if (isServer) {
     return () => [];
   }
@@ -37,7 +44,7 @@ const equalDeviceLists = (prev: MediaDeviceInfo[], next: MediaDeviceInfo[]) =>
  *
  * Without a device, you cannot get permissions, as requesting permissions requires requesting a stream on any device of the kind.
  */
-export const createMicrophones = () => {
+export const createMicrophones = (): Accessor<MediaDeviceInfo[]> => {
   if (isServer) {
     return () => [];
   }
@@ -57,7 +64,7 @@ export const createMicrophones = () => {
  *
  * Microphone permissions automatically include speaker permissions. You can use the device id of the speaker to use the setSinkId-API of any audio tag.
  */
-export const createSpeakers = () => {
+export const createSpeakers = (): Accessor<MediaDeviceInfo[]> => {
   if (isServer) {
     return () => [];
   }
@@ -77,7 +84,7 @@ export const createSpeakers = () => {
  *
  * Without a device, you cannot get permissions, as requesting permissions requires requesting a stream on any device of the kind.
  */
-export const createCameras = () => {
+export const createCameras = (): Accessor<MediaDeviceInfo[]> => {
   if (isServer) {
     return () => [];
   }
@@ -94,7 +101,7 @@ export const createCameras = () => {
  * @param interval number as ms. default value 100
  * @returnValue Acceleration: Accessor<DeviceMotionEventAcceleration | undefined>
  */
-export const createAccelerometer = (includeGravity: boolean = false, interval: number = 100) => {
+export const createAccelerometer = (includeGravity: boolean = false, interval: number = 100): Accessor<DeviceMotionEventAcceleration | undefined> => {
   if (isServer) {
     return () => ({
       x: 0,
@@ -126,7 +133,7 @@ export const createAccelerometer = (includeGravity: boolean = false, interval: n
  * @param interval number as ms. default value 100
  * @returnValue { alpha: 0, beta: 0, gamma: 0 }
  */
-export const createGyroscope = (interval: number = 100) => {
+export const createGyroscope = (interval: number = 100): { alpha: number; beta: number; gamma: number; } => {
   if (isServer) {
     return { alpha: 0, beta: 0, gamma: 0 };
   }
