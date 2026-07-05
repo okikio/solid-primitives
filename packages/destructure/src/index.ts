@@ -1,3 +1,9 @@
+/**
+ * Primitives for destructuring reactive objects – like props or stores – or signals of them into a separate accessors updated individually.
+ *
+ * @module @solid-primitives/destructure
+ */
+
 import { createMemo, type Accessor, runWithOwner, getOwner, type MemoOptions } from "solid-js";
 import {
   access,
