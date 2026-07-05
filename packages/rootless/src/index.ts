@@ -1,3 +1,9 @@
+/**
+ * A collection of helpers that aim to simplify using reactive primitives outside of reactive roots, and managing disposal of reactive roots.
+ *
+ * @module @solid-primitives/rootless
+ */
+
 import {
   createRoot,
   getOwner,
