@@ -1,3 +1,9 @@
+/**
+ * Primitives to query geolocation and observe changes.
+ *
+ * @module @solid-primitives/geolocation
+ */
+
 import { createStaticStore } from "@solid-primitives/static-store";
 import { access, type MaybeAccessor } from "@solid-primitives/utils";
 import type { Resource } from "solid-js";
