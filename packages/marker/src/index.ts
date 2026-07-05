@@ -1,3 +1,9 @@
+/**
+ * A reactive primitive for marking matching parts of a string.
+ *
+ * @module @solid-primitives/marker
+ */
+
 import { type Accessor, createRoot, createSignal, getOwner, onCleanup } from "solid-js";
 
 const SANITIZE_REGEX = /[^\w\s]/g,
