@@ -1,4 +1,4 @@
-import { registerPointerListener, getCenterOfTwoPoints } from "./core.js";
+import { registerPointerListener, getCenterOfTwoPoints } from "./core.ts";
 
 type Props = {
   callback: (rotation: number, center: { x: number; y: number }) => any;
@@ -39,7 +39,7 @@ function getPointersAngleDeg(activeEvents: PointerEvent[]) {
   return angle + quadrantAngleBonus;
 }
 
-export function rotate(node: HTMLElement, props: () => Props) {
+export function rotate(node: HTMLElement, props: () => Props): void {
   let prevAngle: number | undefined;
   let initAngle = 0;
   let rotationCenter: { x: number; y: number };

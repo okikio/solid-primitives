@@ -1,6 +1,12 @@
-export * from "./core.js";
-export * from "./pinch.js";
-export * from "./pan.js";
-export * from "./rotate.js";
-export * from "./swipe.js";
-export * from "./tap.js";
+/**
+ * Directives to react to gestures
+ *
+ * @module @solid-primitives/gestures
+ */
+
+export * from "./core.ts";
+export * from "./pinch.ts";
+export * from "./pan.ts";
+export * from "./rotate.ts";
+export * from "./swipe.ts";
+export * from "./tap.ts";

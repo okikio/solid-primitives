@@ -1,5 +1,5 @@
-import { registerPointerListener } from "./core.js";
-import type { PointerCallback } from "./core.js";
+import { registerPointerListener } from "./core.ts";
+import type { PointerCallback } from "./core.ts";
 
 type Props = {
   callback: (position: { x: number; y: number }) => void;
@@ -15,7 +15,7 @@ declare module "solid-js" {
   }
 }
 
-export const tap = (node: HTMLElement, props: () => Props) => {
+export const tap = (node: HTMLElement, props: () => Props): void => {
   let x: number;
   let y: number;
   let time: number;

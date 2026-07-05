@@ -1,4 +1,4 @@
-import { registerPointerListener, getCenterOfTwoPoints } from "./core.js";
+import { registerPointerListener, getCenterOfTwoPoints } from "./core.ts";
 
 type Props = {
   callback: (scale: number, pinchCenter: { x: number; y: number }) => any;
@@ -19,7 +19,7 @@ function getPointersDistance(activeEvents: PointerEvent[]) {
   );
 }
 
-export function pinch(node: HTMLElement, props: () => Props) {
+export function pinch(node: HTMLElement, props: () => Props): void {
   let prevDistance: number | undefined = undefined;
   let initDistance = 0;
   let pinchCenter: { x: number; y: number };

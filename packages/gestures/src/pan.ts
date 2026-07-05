@@ -1,5 +1,5 @@
-import { registerPointerListener } from "./core.js";
-import type { PointerCallback } from "./core.js";
+import { registerPointerListener } from "./core.ts";
+import type { PointerCallback } from "./core.ts";
 
 type Props = {
   callback: (position: { x: number; y: number }) => any;
@@ -13,7 +13,7 @@ declare module "solid-js" {
   }
 }
 
-export const pan = (node: HTMLElement, props: () => Props) => {
+export const pan = (node: HTMLElement, props: () => Props): void => {
   const moveCallback: PointerCallback = (activeEvents, event) => {
     if (activeEvents.length === 1) {
       const rect = node.getBoundingClientRect();

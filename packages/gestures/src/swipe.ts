@@ -1,4 +1,4 @@
-import { registerPointerListener, DEFAULT_DELAY, DEFAULT_MIN_SWIPE_DISTANCE } from "./core.js";
+import { registerPointerListener, DEFAULT_DELAY, DEFAULT_MIN_SWIPE_DISTANCE } from "./core.ts";
 
 type Props = {
   callback: (direction: "top" | "right" | "bottom" | "left") => any;
@@ -16,7 +16,7 @@ declare module "solid-js" {
   }
 }
 
-export function swipe(node: HTMLElement, props: () => Props) {
+export function swipe(node: HTMLElement, props: () => Props): void {
   let startTime: number;
   let clientX: number;
   let clientY: number;
