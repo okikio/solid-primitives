@@ -1,3 +1,9 @@
+/**
+ * Primitives for managing undo/redo history in Solid.
+ *
+ * @module @solid-primitives/history
+ */
+
 import { type Many, createMicrotask, falseFn, noop } from "@solid-primitives/utils";
 import { type Accessor, type Signal, batch, createMemo, createSignal, untrack } from "solid-js";
 import { isServer } from "solid-js/web";
