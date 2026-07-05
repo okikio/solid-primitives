@@ -1,3 +1,9 @@
+/**
+ * Primitive that creates spring physics functions.
+ *
+ * @module @solid-primitives/spring
+ */
+
 import { type Accessor, createEffect, createSignal, onCleanup } from "solid-js";
 import { isServer } from "solid-js/web";
 
@@ -211,7 +217,7 @@ export function createSpring<T extends SpringTarget>(
 export function createDerivedSpring<T extends SpringTarget>(
   target: Accessor<T>,
   options?: SpringOptions,
-) {
+): Accessor<WidenSpringTarget<T>> {
   const [springValue, setSpringValue] = createSpring(target(), options);
 
   createEffect(() => setSpringValue(target() as WidenSpringTarget<T>));
