@@ -1,9 +1,15 @@
+/**
+ * Primitives for Server-Sent Events (SSE) using the browser's EventSource API.
+ *
+ * @module @solid-primitives/sse/worker
+ */
+
 import {
   SSEReadyState,
   type SSEReadyStateValue,
   type SSEOptions,
   type SSESourceFn,
-} from "./sse.js";
+} from "./sse.ts";
 
 // ─── Protocol types ───────────────────────────────────────────────────────────
 

@@ -1,4 +1,10 @@
 /**
+ * Primitives for Server-Sent Events (SSE) using the browser's EventSource API.
+ *
+ * @module @solid-primitives/sse/worker-handler
+ */
+
+/**
  * Worker script that manages EventSource connections on behalf of the main thread.
  * Bundle and load this file as a Worker:
  *
@@ -13,8 +19,8 @@
  *
  * This file has no Solid reactive code — it is safe to run in any Worker context.
  */
-import { makeSSE, type SSEReadyStateValue } from "./sse.js";
-import type { SSEWorkerMessage } from "./worker.js";
+import { makeSSE, type SSEReadyStateValue } from "./sse.ts";
+import type { SSEWorkerMessage } from "./worker.ts";
 
 const connections = new Map<string, VoidFunction>();
 

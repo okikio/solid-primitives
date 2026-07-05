@@ -1,3 +1,9 @@
+/**
+ * Primitives for Server-Sent Events (SSE) using the browser's EventSource API.
+ *
+ * @module @solid-primitives/sse
+ */
+
 export {
   makeSSE,
   createSSE,
@@ -9,6 +15,6 @@ export {
   type SSEReadyStateValue,
   type CreateSSEOptions,
   type SSEReturn,
-} from "./sse.js";
+} from "./sse.ts";
 
-export { json, ndjson, lines, number, safe, pipe } from "./transform.js";
+export { json, ndjson, lines, number, safe, pipe } from "./transform.ts";
