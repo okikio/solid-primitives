@@ -1,3 +1,9 @@
+/**
+ * The primitives in this package allow you to create controlls for component props.
+ *
+ * @module @solid-primitives/controlled-props
+ */
+
 import { createMemo, createSignal, For } from "solid-js";
 import type { Accessor, Component, JSX, Setter } from "solid-js";
 
