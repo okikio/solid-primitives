@@ -1,3 +1,9 @@
+/**
+ * Two simple primitives for setting cursor css property reactively.
+ *
+ * @module @solid-primitives/cursor
+ */
+
 import { type Accessor, createEffect, onCleanup } from "solid-js";
 import { isServer } from "solid-js/web";
 import { access, type FalsyValue, type MaybeAccessor } from "@solid-primitives/utils";
