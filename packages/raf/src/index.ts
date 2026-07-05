@@ -1,3 +1,9 @@
+/**
+ * Primitive that facilitates RAF functionality
+ *
+ * @module @solid-primitives/raf
+ */
+
 import { type MaybeAccessor, noop } from "@solid-primitives/utils";
 import { createSignal, createMemo, type Accessor, onCleanup } from "solid-js";
 import { isServer } from "solid-js/web";
